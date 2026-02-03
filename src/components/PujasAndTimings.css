@@ -1,0 +1,205 @@
+.grand-timings-section {
+    padding: 80px 0;
+    background: #fdfaf5;
+    border-top: 1px solid #eee;
+}
+
+.pujas-title-span {
+    color: var(--secondary);
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.schedule-tabs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.sanctum-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #eee;
+}
+
+.sanctum-header {
+    padding: 30px;
+    color: white;
+    text-align: center;
+}
+
+.sanctum-header.upper {
+    background: var(--primary);
+}
+
+.sanctum-header.lower {
+    background: #1b3147;
+}
+
+.sanctum-header h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.sanctum-header p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.schedule-body {
+    padding: 20px;
+}
+
+.time-row {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.3s;
+}
+
+.time-row:last-child {
+    border-bottom: none;
+}
+
+.time-row.highlight {
+    background: #fffcf0;
+    border-left: 4px solid var(--secondary);
+}
+
+.time-row.note {
+    background: #f9f9f9;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.time {
+    min-width: 140px;
+    font-weight: 800;
+    color: var(--primary);
+    font-size: 0.95rem;
+}
+
+.ritual h4 {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.ritual p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Tablet styles */
+@media (max-width: 900px) {
+    .grand-timings-section {
+        padding: 60px 0;
+    }
+
+    .schedule-tabs-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sanctum-header h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .grand-timings-section {
+        padding: 40px 0;
+    }
+
+    .grand-title h2 {
+        font-size: 2rem;
+    }
+
+    .schedule-tabs-container {
+        gap: 25px;
+    }
+
+    .sanctum-header {
+        padding: 20px;
+    }
+
+    .sanctum-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .sanctum-header p {
+        font-size: 0.8rem;
+    }
+
+    .schedule-body {
+        padding: 15px;
+    }
+
+    .time-row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .time {
+        min-width: auto;
+        font-size: 0.9rem;
+    }
+
+    .ritual h4 {
+        font-size: 0.95rem;
+    }
+
+    .ritual p {
+        font-size: 0.8rem;
+    }
+
+    .time-row.note {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .grand-timings-section {
+        padding: 30px 0;
+    }
+
+    .grand-title h2 {
+        font-size: 1.6rem;
+    }
+
+    .sanctum-header {
+        padding: 15px;
+    }
+
+    .sanctum-header h3 {
+        font-size: 1rem;
+    }
+
+    .schedule-body {
+        padding: 10px;
+    }
+
+    .time-row {
+        padding: 12px;
+    }
+
+    .time {
+        font-size: 0.85rem;
+    }
+
+    .ritual h4 {
+        font-size: 0.9rem;
+    }
+
+    .ritual p {
+        font-size: 0.75rem;
+    }
+}

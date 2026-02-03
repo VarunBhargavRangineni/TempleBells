@@ -1,0 +1,264 @@
+.grand-navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 40px;
+}
+
+.brand-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.temple-logo-purple {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.temple-logo-purple:hover {
+    transform: translateY(-2px);
+}
+
+.om-symbol {
+    font-size: 1.8rem;
+    color: white;
+    line-height: 1;
+}
+
+@keyframes om-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.brand-text h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    margin: 0;
+    color: #d4af37;
+}
+
+.brand-text p {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-top: 3px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    padding: 5px 0;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #d4af37;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.nav-actions {
+    flex-shrink: 0;
+}
+
+.sign-in-btn {
+    padding: 10px 24px;
+    font-size: 0.75rem;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    color: #000;
+    border-radius: 4px;
+    white-space: nowrap;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sign-in-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+/* Tablet adjustments */
+@media (max-width: 1200px) {
+    .nav-inner {
+        padding: 0 30px;
+    }
+
+    .main-nav {
+        gap: 24px;
+    }
+
+    .main-nav a {
+        font-size: 0.7rem;
+    }
+
+    .brand-text h1 {
+        font-size: 1.3rem;
+    }
+
+    .brand-text p {
+        font-size: 0.6rem;
+    }
+}
+
+/* Hide navigation on smaller tablets and mobile */
+@media (max-width: 1024px) {
+    .grand-navbar {
+        height: 65px;
+    }
+
+    .nav-inner {
+        padding: 0 20px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .brand-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .brand-text p {
+        font-size: 0.6rem;
+    }
+
+    .sign-in-btn {
+        padding: 8px 18px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .grand-navbar {
+        height: 60px;
+    }
+
+    .nav-inner {
+        padding: 0 15px;
+    }
+
+    .brand-box {
+        gap: 8px;
+    }
+
+    .temple-logo-purple {
+        width: 40px;
+        height: 40px;
+    }
+
+    .om-symbol {
+        font-size: 1.5rem;
+    }
+
+    .brand-text h1 {
+        font-size: 1.1rem;
+    }
+
+    .brand-text p {
+        font-size: 0.55rem;
+    }
+
+    .sign-in-btn {
+        padding: 7px 14px;
+        font-size: 0.65rem;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .grand-navbar {
+        height: 55px;
+    }
+
+    .brand-text h1 {
+        font-size: 1rem;
+    }
+
+    .brand-text p {
+        display: none;
+    }
+
+    .temple-logo-purple {
+        width: 35px;
+        height: 35px;
+    }
+
+    .om-symbol {
+        font-size: 1.3rem;
+    }
+
+    .sign-in-btn {
+        padding: 6px 12px;
+        font-size: 0.6rem;
+    }
+}

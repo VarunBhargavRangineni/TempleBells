@@ -1,0 +1,245 @@
+.spots-section {
+    padding: 100px 0;
+    background: #f8f1e7;
+}
+
+.spots-title-span {
+    color: var(--secondary);
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.spots-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.spots-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.spot-item {
+    display: flex;
+    gap: 20px;
+}
+
+.spot-num {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--secondary);
+    opacity: 0.3;
+    line-height: 1;
+}
+
+.spot-content h4 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.spot-content p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.spot-content small {
+    color: var(--secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.spots-visual {
+    display: flex;
+    align-items: center;
+}
+
+.visual-card {
+    background: var(--primary);
+    color: white;
+    padding: 50px;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.visual-card::before {
+    content: 'ॐ';
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    font-size: 15rem;
+    opacity: 0.05;
+}
+
+.visual-tag {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.visual-card h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.visual-card p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.time-badge {
+    display: inline-block;
+    margin-top: 30px;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 900;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .spots-section {
+        padding: 60px 0;
+    }
+
+    .spots-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .spots-info-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .visual-card {
+        padding: 40px;
+    }
+
+    .visual-card h3 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .spots-section {
+        padding: 40px 0;
+    }
+
+    .grand-title h2 {
+        font-size: 2rem;
+    }
+
+    .spots-layout {
+        margin-top: 40px;
+        gap: 30px;
+    }
+
+    .spots-info-grid {
+        gap: 25px;
+    }
+
+    .spot-item {
+        gap: 15px;
+    }
+
+    .spot-num {
+        font-size: 2rem;
+    }
+
+    .spot-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .spot-content p {
+        font-size: 0.9rem;
+    }
+
+    .spot-content small {
+        font-size: 0.7rem;
+    }
+
+    .visual-card {
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .visual-card::before {
+        font-size: 10rem;
+        right: -20px;
+        top: -20px;
+    }
+
+    .visual-tag {
+        font-size: 0.75rem;
+    }
+
+    .visual-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .visual-card p {
+        font-size: 1rem;
+    }
+
+    .time-badge {
+        margin-top: 20px;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .spots-section {
+        padding: 30px 0;
+    }
+
+    .grand-title h2 {
+        font-size: 1.6rem;
+    }
+
+    .spot-num {
+        font-size: 1.8rem;
+    }
+
+    .spot-content h4 {
+        font-size: 1rem;
+    }
+
+    .spot-content p {
+        font-size: 0.85rem;
+    }
+
+    .visual-card {
+        padding: 25px;
+    }
+
+    .visual-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .visual-card p {
+        font-size: 0.95rem;
+    }
+
+    .visual-card::before {
+        font-size: 8rem;
+    }
+}

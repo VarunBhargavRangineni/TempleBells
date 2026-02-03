@@ -1,0 +1,440 @@
+:root {
+  --primary: #8E0E00;
+  /* Deep Heritage Maroon */
+  --primary-light: #B91D1B;
+  --secondary: #D4AF37;
+  /* Metallic Gold */
+  --secondary-light: #FFD700;
+  --secondary-rgb: 212, 175, 55;
+  --primary-rgb: 142, 14, 0;
+  --accent: #E17055;
+  --bg-dark: #0F0F0F;
+  --bg-cream: #FFFDF9;
+  --text-dark: #1A1A1A;
+  --text-gold: #C5A028;
+  --white: #ffffff;
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 30px 60px rgba(142, 14, 0, 0.15);
+  --transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.temple-font {
+  font-family: 'Cinzel', serif;
+}
+
+/* Grand Header */
+.frozen-header {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar-gold {
+  background: linear-gradient(90deg, #8E0E00 0%, #1F1C18 100%);
+  color: var(--secondary);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  overflow: hidden;
+  border-bottom: 2px solid var(--secondary);
+}
+
+/* Gold Text Gradient */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #F1C40F 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ornamental Border */
+.ornamental-border {
+  height: 10px;
+  background-image: radial-gradient(circle at 50% 100%, var(--secondary) 2px, transparent 2px);
+  background-size: 20px 10px;
+  background-repeat: repeat-x;
+  opacity: 0.3;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goldPulse {
+  0% {
+    text-shadow: 0 0 0px #D4AF37;
+  }
+
+  50% {
+    text-shadow: 0 0 15px #D4AF37;
+  }
+
+  100% {
+    text-shadow: 0 0 0px #D4AF37;
+  }
+}
+
+.animate-fade {
+  animation: fadeInUp 1s forwards;
+}
+
+/* Buttons */
+.gold-btn {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  color: var(--primary);
+  padding: 12px 30px;
+  border-radius: 4px;
+  font-weight: 800;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+  transition: var(--transition);
+}
+
+.gold-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(184, 134, 11, 0.5);
+  filter: brightness(1.1);
+}
+
+.maroon-btn {
+  background: var(--primary);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.maroon-btn:hover {
+  background: var(--primary-light);
+  transform: scale(1.05);
+}
+
+/* Shared Temple Logo Styles */
+.temple-logo-purple {
+  background: linear-gradient(135deg, #7c4dff 0%, #448aff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(124, 77, 255, 0.3);
+}
+
+.om-symbol {
+  color: white;
+  line-height: 1;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Section Title */
+.grand-title {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.grand-title h2 {
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.grand-title .divider {
+  width: 150px;
+  height: 3px;
+  background: var(--secondary);
+  margin: 0 auto;
+  position: relative;
+}
+
+.grand-title .divider::after {
+  content: '☸';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-cream);
+  padding: 0 10px;
+  color: var(--secondary);
+  font-size: 1.2rem;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Temple Highlights Ticker */
+.temple-ticker-container {
+  background: var(--white);
+  height: 45px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+}
+
+.ticker-label {
+  background: var(--primary);
+  color: var(--secondary);
+  height: 100%;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.ticker-track {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #FFFDF9;
+}
+
+.ticker-content {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 20px;
+  animation: ticker-scroll 40s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.ticker-item .symbol {
+  color: var(--primary);
+  margin-right: 12px;
+  font-style: normal;
+  font-size: 1.1rem;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.temple-ticker-container:hover .ticker-content {
+  animation-play-state: paused;
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+/* Tablet styles (1024px and below) */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 25px;
+  }
+
+  .grand-title {
+    margin-bottom: 50px;
+  }
+
+  .grand-title h2 {
+    font-size: 2.2rem;
+  }
+
+  .grand-title .divider {
+    width: 120px;
+  }
+
+  .top-bar-gold {
+    height: 35px;
+    font-size: 0.75rem;
+  }
+
+  .temple-ticker-container {
+    height: 40px;
+  }
+
+  .ticker-label {
+    padding: 0 20px;
+    font-size: 0.7rem;
+  }
+
+  .ticker-item {
+    padding: 0 40px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile styles (768px and below) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .grand-title {
+    margin-bottom: 40px;
+  }
+
+  .grand-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .grand-title span {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+  }
+
+  .grand-title .divider {
+    width: 100px;
+    height: 2px;
+  }
+
+  .grand-title .divider::after {
+    font-size: 1rem;
+    top: -10px;
+  }
+
+  .top-bar-gold {
+    height: 30px;
+    font-size: 0.7rem;
+    padding: 0 10px;
+  }
+
+  .temple-ticker-container {
+    height: 35px;
+  }
+
+  .ticker-label {
+    padding: 0 15px;
+    font-size: 0.65rem;
+  }
+
+  .ticker-item {
+    padding: 0 30px;
+    font-size: 0.8rem;
+  }
+
+  .ticker-item .symbol {
+    font-size: 1rem;
+    margin-right: 8px;
+  }
+
+  .gold-btn,
+  .maroon-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small mobile (480px and below) */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .grand-title {
+    margin-bottom: 30px;
+  }
+
+  .grand-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .grand-title span {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+
+  .grand-title .divider {
+    width: 80px;
+  }
+
+  .top-bar-gold {
+    height: 28px;
+    font-size: 0.65rem;
+  }
+
+  .temple-ticker-container {
+    height: 32px;
+  }
+
+  .ticker-label {
+    padding: 0 12px;
+    font-size: 0.6rem;
+  }
+
+  .ticker-item {
+    padding: 0 25px;
+    font-size: 0.75rem;
+  }
+
+  .gold-btn,
+  .maroon-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .ornamental-border {
+    height: 8px;
+    background-size: 15px 8px;
+  }
+}
