@@ -1,7 +1,7 @@
 export const translations = {
     EN: {
-        welcome: "WELCOME TO TEMPLE BELLS",
-        brand_tagline: "THE ETERNAL HOLY ABODE",
+        welcome: "WELCOME TO TIRUMALA TIRUPATI DEVASTHANAMS",
+        brand_tagline: "KALIYUGA VAIKUNTHAM",
         highlights: "LATEST HIGHLIGHTS",
         h1: "Sacred Mahakshetram",
         h2: "Darshan Timings: 6 AM - 3 PM",
@@ -27,19 +27,59 @@ export const translations = {
         btn_donate: "Make a Donation",
         slides: [
             {
-                title: 'Temple Bells',
-                subtitle: 'The Eternal Holy Abode',
-                tag: 'Sacred Heritage'
+                title: 'Tirumala Tirupati Devasthanams',
+                subtitle: 'Kali Yuga Vaikuntham - The Abode of Lord Venkateswara',
+                tag: 'Om Namo Venkatesaya'
             },
             {
-                title: 'Divine Panakam Offering',
-                subtitle: 'Experience the Miracle of the Gurgling Sound',
-                tag: 'Sacred Ritual'
+                title: 'Srisailam Mallikarjuna Swamy',
+                subtitle: 'The Abode of Lord Shiva & Bhramaramba Devi',
+                tag: 'Om Namah Shivaya'
             },
             {
-                title: 'Heritage & Majesty',
-                subtitle: 'Echoes of the Vijayanagara Emperors',
-                tag: 'Historical Glory'
+                title: 'Kanaka Durga Temple',
+                subtitle: 'The Powerful Deity on Indrakeeladri Hill',
+                tag: 'Jai Durga Bhavani'
+            },
+            {
+                title: 'Simhachalam Temple',
+                subtitle: 'The Abode of Lord Varaha Lakshmi Narasimha',
+                tag: 'Om Namo Narayanaya'
+            },
+            {
+                title: 'Ahobilam Temple',
+                subtitle: 'The Nine Abodes of Lord Narasimha',
+                tag: 'Nava Narasimha Kshetram'
+            },
+            {
+                title: 'Sri Panakala Lakshmi Narasimha Swamy',
+                subtitle: 'The Lord Who Drinks Panakam',
+                tag: 'Mangalagiri Kshetram'
+            },
+            {
+                title: 'Bhadrachalam Sri Rama Temple',
+                subtitle: 'The Vaikuntha of Lord Rama',
+                tag: 'Sri Rama Jayam'
+            },
+            {
+                title: 'Basara Gnana Saraswati Temple',
+                subtitle: 'The Ancient Abode of Goddess Saraswati',
+                tag: 'Vidya Kshetram'
+            },
+            {
+                title: 'Swayambhu Sri Varasiddhi Vinayaka Swamy',
+                subtitle: 'Kanipakam Devasthanam - The Lord of Beginnings',
+                tag: 'Om Gam Ganapataye Namaha'
+            },
+            {
+                title: 'Sri Lakshmi Narasimha Swamy Temple',
+                subtitle: 'Yadagirigutta - Telangana Tirupati',
+                tag: 'Om Namo Narasimhaya'
+            },
+            {
+                title: 'Arunachaleswarar Temple - Thiruvannamalai',
+                subtitle: 'The Agni Lingam - Eternal Fire of Wisdom',
+                tag: 'Om Arunachaleswaraya Namaha'
             }
         ],
         history_title: "TEMPLE CHRONICLES",
@@ -265,19 +305,59 @@ export const translations = {
         btn_donate: "दान करें",
         slides: [
             {
-                title: 'टेम्पल बेल्स',
-                subtitle: 'शाश्वत पवित्र निवास',
-                tag: 'पवित्र विरासत'
+                title: 'तिरुमाला तिरुपति देवस्थानम',
+                subtitle: 'कलियुग वैकुंठम - भगवान वेंकटेश्वर का निवास',
+                tag: 'ओम नमो वेंकटेशाय'
             },
             {
-                title: 'दिव्य पानकम अर्पण',
-                subtitle: 'गड़गड़ाहट की ध्वनि के चमत्कार का अनुभव करें',
-                tag: 'पवित्र अनुष्ठान'
+                title: 'श्रीशैलम मल्लिकार्जुन स्वामी',
+                subtitle: 'भगवान शिव और भ्रमराम्बा देवी का निवास',
+                tag: 'ओम नमः शिवाय'
             },
             {
-                title: 'विरासत और महिमा',
-                subtitle: 'विजयनगर सम्राटों की गूँज',
-                tag: 'ऐतिहासिक महिमा'
+                title: 'कनक दुर्गा मंदिर',
+                subtitle: 'इंद्रकीलाद्री पर्वत पर स्थित शक्तिपीठ',
+                tag: 'जय दुर्गा भवानी'
+            },
+            {
+                title: 'सिम्हाचलम मंदिर',
+                subtitle: 'भगवान वराह लक्ष्मी नरसिम्हा का निवास',
+                tag: 'ओम नमो नारायणाय'
+            },
+            {
+                title: 'अहोबिलम मंदिर',
+                subtitle: 'भगवान नरसिंह के नौ पवित्र निवास',
+                tag: 'नव नरसिंह क्षेत्रम'
+            },
+            {
+                title: 'श्री पानकला लक्ष्मी नरसिम्हा स्वामी',
+                subtitle: 'पानकम स्वीकार करने वाले भगवान',
+                tag: 'मंगलगीरी क्षेत्रम'
+            },
+            {
+                title: 'भद्राचलम श्री राम मंदिर',
+                subtitle: 'भगवान राम का वैकुंठ',
+                tag: 'श्री राम जयम'
+            },
+            {
+                title: 'बासर ज्ञान सरस्वती मंदिर',
+                subtitle: 'देवी सरस्वती का प्राचीन निवास',
+                tag: 'विद्या क्षेत्रम'
+            },
+            {
+                title: 'स्वयंभू श्री वरसिद्धि विनायक स्वामी',
+                subtitle: 'कनिपकम देवस्थानम - विघ्नहर्ता',
+                tag: 'ओम गं गणपतये नमः'
+            },
+            {
+                title: 'श्री लक्ष्मी नरसिम्हा स्वामी मंदिर',
+                subtitle: 'यादगिरिगुट्टा - तेलंगाना तिरुपति',
+                tag: 'ओम नमो नरसिम्हाय'
+            },
+            {
+                title: 'अरुणाचलेश्वर मंदिर - तिरुवन्नमलई',
+                subtitle: 'अग्नि लिंगम - ज्ञान की शाश्वत अग्नि',
+                tag: 'ओम अरुणाचलेश्वराय नमः'
             }
         ],
         history_title: "मंदिर के इतिहास",
@@ -503,19 +583,59 @@ export const translations = {
         btn_donate: "విరాళం ఇవ్వండి",
         slides: [
             {
-                title: 'టెంపుల్ బెల్స్',
-                subtitle: 'శాశ్వత పవిత్ర నివాసం',
-                tag: 'పవిత్ర వారసత్వం'
+                title: 'తిరుమల తిరుపతి దేవస్థానం',
+                subtitle: 'కలియుగ వైకుంఠం - శ్రీ వేంకటేశ్వర స్వామి వారి దివ్య క్షేత్రం',
+                tag: 'ఓం నమో వేంకటేశాయ'
             },
             {
-                title: 'దివ్య పానక సమర్పణ',
-                subtitle: 'పానకం తాగేటప్పుడు వచ్చే వింత శబ్దాన్ని అనుభవించండి',
-                tag: 'పవిత్ర ఆచారం'
+                title: 'శ్రీశైలం మల్లికార్జున స్వామి',
+                subtitle: 'శివయ్య మరియు భ్రమరాంబ అమ్మవారి దివ్య క్షేత్రం',
+                tag: 'ఓం నమః శివాయ'
             },
             {
-                title: 'వారసత్వం & వైభవం',
-                subtitle: 'విజయనగర చక్రవర్తుల వైభవానికి ప్రతీక',
-                tag: 'చారిత్రక వైభవం'
+                title: 'కనక దుర్గ దేవాలయం',
+                subtitle: 'ఇంద్రకీలాద్రి పై వెలసిన అమ్మవారు',
+                tag: 'జై దుర్గా భవాని'
+            },
+            {
+                title: 'సింహాచలం దేవాలయం',
+                subtitle: 'శ్రీ వరాహ లక్ష్మీ నరసింహ స్వామి వారి దివ్య క్షేత్రం',
+                tag: 'ఓం నమో నారాయణాయ'
+            },
+            {
+                title: 'అహోబిలం ఆలయం',
+                subtitle: 'నవ నారసింహ క్షేత్రం',
+                tag: 'ఓం నమః నరసింహాయ'
+            },
+            {
+                title: 'శ్రీ పానకాల లక్ష్మీ నరసింహ స్వామి',
+                subtitle: 'పానకం సేవించే నరసింహుడు',
+                tag: 'మంగళగిరి క్షేత్రం'
+            },
+            {
+                title: 'భద్రాచలం శ్రీ సీతారామచంద్ర స్వామి',
+                subtitle: 'దక్షిణ అయోధ్య',
+                tag: 'శ్రీ రామ జయం'
+            },
+            {
+                title: 'బాసర జ్ఞాన సరస్వతి ఆలయం',
+                subtitle: 'అమ్మవారి పురాతన ఆలయం',
+                tag: 'విద్యా క్షేత్రం'
+            },
+            {
+                title: 'స్వయంభూ శ్రీ వరసిద్ధి వినాయక స్వామి',
+                subtitle: 'కాణిపాకం దేవస్థానం - విఘ్నేశ్వరుడు',
+                tag: 'ఓం గం గణపతయే నమః'
+            },
+            {
+                title: 'శ్రీ లక్ష్మీ నరసింహ స్వామి దేవాలయం',
+                subtitle: 'యాదగిరిగుట్ట - తెలంగాణ తిరుపతి',
+                tag: 'ఓం నమో నారసింహాయ'
+            },
+            {
+                title: 'అరుణాచలేశ్వర ఆలయం - తిరువణామలై',
+                subtitle: 'అగ్ని లింగం - జ్ఞాన ప్రకాశం',
+                tag: 'ఓం అరుణాచలేశ్వరాయ నమః'
             }
         ],
         history_title: "దేవాలయ చరిత్ర",

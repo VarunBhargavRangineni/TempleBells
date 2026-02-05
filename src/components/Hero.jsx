@@ -7,14 +7,22 @@ function Hero({ lang }) {
   const t = translations[lang || 'EN'];
 
   const slideImages = [
-    'https://www.panakalanarasimhaswamy.org/images/temple-image-2.jpg',
-    'https://www.panakalanarasimhaswamy.org/images/temple-image-10.jpg',
-    'https://www.panakalanarasimhaswamy.org/images/temple-image-3.jpg'
+    'https://www.fabhotels.com/blog/wp-content/uploads/2019/03/Sri-Venkateswara-Swamy-Temple-Tirumala.jpg',
+    'https://srisailamtourism.com/images/partner-tours/1-day-hyderabad-to-srisailam-sightseeing-tour-package-private-car-header.jpg',
+    'https://live.staticflickr.com/409/18298741278_a0675e8527_b.jpg',
+    'https://media.tripinvites.com/places/visakhapatnam/simhachalam-temple/the-simhachalam-temple-featured.jpg',
+    'https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1539191288_20200102183329_20200416152607.jpg',
+    'https://www.pilgrimaide.com/image/cache/catalog/Blogs/Panakala%20Narasimha%20Swamy%20Temple-2120x800w.jpg',
+    'http://bhadrachalaramadasu.com/wp-content/uploads/2014/10/rrr.jpg',
+    'https://travellerkaka.com/wp-content/uploads/2025/03/Add-a-subheading-22-5-1068x559.png',
+    'https://famoustemplesofindia.com/wp-content/uploads/2023/09/Kanipakam-Varasiddhi-Vinayaka-Swamy-2-1024x578.jpg',
+    'https://www.hyderabadzone.com/wp-content/uploads/2022/11/Yadagirigutta-Yadadri-Temple-4-1200x674.jpg',
+    'https://i.ytimg.com/vi/AYmHRURQZVA/maxresdefault.jpg'
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 3);
+      setCurrentSlide((prev) => (prev + 1) % slideImages.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
