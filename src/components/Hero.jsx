@@ -11,6 +11,7 @@ function Hero({ lang }) {
     'https://srisailamtourism.com/images/partner-tours/1-day-hyderabad-to-srisailam-sightseeing-tour-package-private-car-header.jpg',
     'https://live.staticflickr.com/409/18298741278_a0675e8527_b.jpg',
     'https://media.tripinvites.com/places/visakhapatnam/simhachalam-temple/the-simhachalam-temple-featured.jpg',
+    'https://1.bp.blogspot.com/-woaUFQ48K_s/X9HT2Di-ToI/AAAAAAAADVc/ih29PL2h6OgzUYbydOZpgRZKOOChKJ5YACLcBGAsYHQ/s2048/Kotappakonda%2BTemple%2BTop%2BView.jpg',
     'https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1539191288_20200102183329_20200416152607.jpg',
     'https://www.pilgrimaide.com/image/cache/catalog/Blogs/Panakala%20Narasimha%20Swamy%20Temple-2120x800w.jpg',
     'http://bhadrachalaramadasu.com/wp-content/uploads/2014/10/rrr.jpg',
@@ -23,7 +24,7 @@ function Hero({ lang }) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideImages.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(timer);
   }, []);
 
@@ -35,10 +36,10 @@ function Hero({ lang }) {
             <div key={idx} className={`slide ${idx === currentSlide ? 'active' : ''}`}
               style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(${slideImages[idx]})` }}>
               <div className="container slide-content">
-                <span className="slide-tag animate-fade">{slide.tag}</span>
-                <h1 className="animate-fade">{slide.title}</h1>
-                <p className="animate-fade">{slide.subtitle}</p>
-                <div className="hero-cta animate-fade">
+                <span className="slide-tag animate-slide-right" style={{ animationDelay: '0.2s' }}>{slide.tag}</span>
+                <h1 className="animate-slide-right" style={{ animationDelay: '0.4s' }}>{slide.title}</h1>
+                <p className="animate-slide-left" style={{ animationDelay: '0.6s' }}>{slide.subtitle}</p>
+                <div className="hero-cta animate-slide-up" style={{ animationDelay: '0.8s' }}>
                   <a href="#services" className="gold-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>{t.hero_btn}</a>
                 </div>
               </div>

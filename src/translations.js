@@ -1,6 +1,6 @@
 export const translations = {
     EN: {
-        welcome: "WELCOME TO TEMPLE BELLS",
+        welcome: "WELCOME TO TIRUMALA TIRUPATI DEVASTHANAMS",
         brand_tagline: "KALIYUGA VAIKUNTHAM",
         highlights: "LATEST HIGHLIGHTS",
         h1: "Sacred Mahakshetram",
@@ -45,6 +45,11 @@ export const translations = {
                 title: 'Simhachalam Temple',
                 subtitle: 'The Abode of Lord Varaha Lakshmi Narasimha',
                 tag: 'Om Namo Narayanaya'
+            },
+            {
+                title: 'Kotappakonda Sri Trikoteswara Swamy Temple',
+                subtitle: 'The Hill of Three Peaks - Trikutachalam',
+                tag: 'Om Namah Shivaya'
             },
             {
                 title: 'Ahobilam Temple',
@@ -325,6 +330,11 @@ export const translations = {
                 tag: 'ओम नमो नारायणाय'
             },
             {
+                title: 'कोताप्पकोंडा श्री त्रिकोटेश्वर स्वामी मंदिर',
+                subtitle: 'तीन चोटियों का पहाड़ - त्रिकुटाचलम',
+                tag: 'ओम नमः शिवाय'
+            },
+            {
                 title: 'अहोबिलम मंदिर',
                 subtitle: 'भगवान नरसिंह के नौ पवित्र निवास',
                 tag: 'नव नरसिंह क्षेत्रम'
@@ -601,6 +611,11 @@ export const translations = {
                 title: 'సింహాచలం దేవాలయం',
                 subtitle: 'శ్రీ వరాహ లక్ష్మీ నరసింహ స్వామి వారి దివ్య క్షేత్రం',
                 tag: 'ఓం నమో నారాయణాయ'
+            },
+            {
+                title: 'కోటప్పకొండ శ్రీ త్రికోటేశ్వర స్వామి',
+                subtitle: 'త్రికూటాచలం - మూడు శిఖరాల కొండ',
+                tag: 'ఓం నమః శివాయ'
             },
             {
                 title: 'అహోబిలం ఆలయం',
