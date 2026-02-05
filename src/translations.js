@@ -1,6 +1,6 @@
 export const translations = {
     EN: {
-        welcome: "WELCOME TO TIRUMALA TIRUPATI DEVASTHANAMS",
+        welcome: "WELCOME TO Temple Bells",
         brand_tagline: "KALIYUGA VAIKUNTHAM",
         highlights: "LATEST HIGHLIGHTS",
         h1: "Sacred Mahakshetram",
