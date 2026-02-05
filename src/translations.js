@@ -1,6 +1,6 @@
 export const translations = {
     EN: {
-        welcome: "WELCOME TO Temple Bells",
+        welcome: "WELCOME TO TEMPLE BELLS",
         brand_tagline: "KALIYUGA VAIKUNTHAM",
         highlights: "LATEST HIGHLIGHTS",
         h1: "Sacred Mahakshetram",
