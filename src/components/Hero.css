@@ -1,6 +1,6 @@
 .hero-grand-container {
     position: relative;
-    height: 92vh;
+    height: 95vh;
     overflow: hidden;
 }
 
@@ -375,5 +375,248 @@
 
     .ribbon-item p {
         font-size: 0.8rem;
+    }
+}
+
+/* Visdom Badge Styling */
+.visdom-badge {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    z-index: 25;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    /* Align to top to match text stack */
+    gap: 4px;
+    opacity: 0;
+    animation: badgeEntry 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+    cursor: default;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+/* Logo Animation */
+.visdom-logo {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
+    margin-left: 0px;
+    /* Visual optical alignment with the main text */
+}
+
+.visdom-logo svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.visdom-logo path {
+    stroke: #68c4ef !important;
+    stroke-width: 2.2px !important;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: drawCheck 1.5s ease-out forwards;
+}
+
+.check-1 {
+    animation-delay: 1.2s;
+}
+
+.check-2 {
+    animation-delay: 1.4s;
+}
+
+.check-3 {
+    animation-delay: 1.6s;
+}
+
+@keyframes drawCheck {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Text Styling */
+.visdom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.visdom-label {
+    font-size: 0.55rem;
+    color: #F59E0B;
+    /* Deep Amber/Saffron */
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    margin-bottom: 1px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1s forwards;
+    font-family: 'Poppins', sans-serif;
+}
+
+.visdom-header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-5px);
+    margin: 2px 0;
+    animation: textSlideIn 0.8s ease-out 1.2s forwards;
+}
+
+.visdom-waves {
+    font-weight: 800;
+    color: #FFD700;
+    /* Semantic Gold fallback */
+    background: linear-gradient(120deg, #FFB347, #FFCC33, #FFB347);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmerWaves 4s linear infinite;
+}
+
+.visdom-sub {
+    font-size: 0.45rem;
+    color: #cbd5e1;
+    /* Light Slate */
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    margin-top: 1px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1.5s forwards;
+}
+
+.visdom-tagline {
+    font-size: 0.45rem;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    opacity: 0;
+    white-space: nowrap;
+    overflow: visible;
+    animation:
+        slideInTag 1s ease-out 1.8s forwards,
+        pulseTag 4s ease-in-out 2.8s infinite;
+}
+
+/* Animations */
+@keyframes badgeEntry {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textSlideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInTag {
+    from {
+        opacity: 0;
+        transform: translateX(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulseTag {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.1);
+    }
+
+    50% {
+        transform: translateX(2px);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+        letter-spacing: 1.5px;
+    }
+}
+
+@keyframes shimmerWaves {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .visdom-badge {
+        top: 70px;
+        right: 15px;
+        gap: 8px;
+    }
+
+    .visdom-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .visdom-label {
+        font-size: 0.45rem;
+    }
+
+    .visdom-header {
+        font-size: 0.75rem;
+    }
+
+    .visdom-sub {
+        font-size: 0.4rem;
+        display: none;
+        /* Hide sub on very small screens to save space */
+    }
+
+    .visdom-tagline {
+        font-size: 0.35rem;
+        letter-spacing: 0.8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .visdom-badge {
+        right: 10px;
+        top: 65px;
+    }
+
+    .visdom-content {
+        line-height: 1;
     }
 }

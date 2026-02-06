@@ -31,6 +31,21 @@ function Hero({ lang }) {
   return (
     <>
       <div className="hero-grand-container">
+        <div className="visdom-badge">
+          <div className="visdom-logo">
+            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 25 L18 35 L30 15" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="check-1" />
+              <path d="M16 25 L24 35 L36 15" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="check-2" />
+              <path d="M22 25 L30 35 L42 15" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="check-3" />
+            </svg>
+          </div>
+          <div className="visdom-content">
+            <div className="visdom-label">Powered by</div>
+            <div className="visdom-header">Visdom Waves</div>
+            <div className="visdom-sub">Innovations Private Limited</div>
+            <div className="visdom-tagline">Driven by vision</div>
+          </div>
+        </div>
         <div className="slideshow">
           {t.slides.map((slide, idx) => (
             <div key={idx} className={`slide ${idx === currentSlide ? 'active' : ''}`}
