@@ -57,25 +57,18 @@ const Navbar = () => {
             <div className="w-full px-4 md:px-6 lg:px-8 relative z-10">
                 <div className="flex justify-between items-center">
 
-                    <Link to="/" className="flex items-center gap-4 group cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
+                    <Link to="/" className="flex items-center gap-4 group cursor-pointer ml-4" onClick={() => window.scrollTo(0, 0)}>
                         <div className="relative">
                             <motion.div
                                 whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                                 transition={{ duration: 0.4 }}
-                                className="w-11 h-11 bg-gradient-to-br from-kumkum via-temple-maroon to-black rounded-xl flex items-center justify-center shadow-[0_5px_20px_rgba(155,27,27,0.4)] group-hover:shadow-[0_10px_30px_rgba(155,27,27,0.6)] transition-all duration-500 border border-temple-gold/50 overflow-hidden"
+                                className="w-12 h-12 flex items-center justify-center transition-all duration-500 overflow-hidden"
                             >
                                 <img
                                     src="images/Vslogo.webp"
                                     alt="Temple Logo"
-                                    className="w-full h-full object-cover mix-blend-screen brightness-110 contrast-110"
+                                    className="w-full h-full object-contain mix-blend-screen brightness-110 contrast-110"
                                 />
-                            </motion.div>
-                            <motion.div
-                                animate={{ scale: [1, 1.3, 1] }}
-                                transition={{ duration: 2, repeat: Infinity }}
-                                className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-tr from-temple-gold to-yellow-200 rounded-full border-2 border-[#120D08] shadow-lg overflow-hidden"
-                            >
-                                <div className="absolute inset-0 bg-white/20 animate-pulse" />
                             </motion.div>
                         </div>
                         <div className="flex flex-col">
