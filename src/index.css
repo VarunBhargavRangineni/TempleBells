@@ -167,3 +167,47 @@ body {
 .card-shadow {
   box-shadow: 0 10px 30px -10px rgba(45, 36, 30, 0.1);
 }
+
+/* Custom Devotional Scrollbar Styling */
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-temple-ivory);
+  border-radius: 10px;
+  border: 1px solid rgba(155, 27, 27, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,
+      var(--color-kumkum) 0%,
+      var(--color-temple-maroon) 50%,
+      var(--color-temple-gold) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--color-temple-ivory);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg,
+      var(--color-temple-gold) 0%,
+      var(--color-kumkum) 50%,
+      var(--color-temple-maroon) 100%);
+  border-color: rgba(184, 134, 11, 0.2);
+  box-shadow: 0 0 10px rgba(155, 27, 27, 0.3);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg,
+      var(--color-temple-maroon) 0%,
+      var(--color-kumkum) 100%);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-kumkum) var(--color-temple-ivory);
+}

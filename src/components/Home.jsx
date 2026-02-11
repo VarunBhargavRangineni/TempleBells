@@ -111,32 +111,44 @@ const Home = () => {
                         {
                             title: 'LIVE CROWD TRACKER',
                             desc: 'Real-time monitoring of pilgrim density and automated flow control systems.',
-                            icon: '👥'
+                            icon: '👥',
+                            path: '/live-tracker',
+                            btnText: 'SEE LIVE TRACKER'
                         },
                         {
                             title: 'Automated Seva Scheduling',
                             desc: 'Smart queue management and digital slot allocation for all temple rituals.',
-                            icon: '🗓️'
+                            icon: '🗓️',
+                            path: '/sevas',
+                            btnText: 'SCHEDULE SEVA'
                         },
                         {
                             title: 'Online Darshan Booking',
                             desc: 'A seamless, high-volume reservation portal for verified pilgrim visits.',
-                            icon: '🎫'
+                            icon: '🎫',
+                            path: '/darshan',
+                            btnText: 'BOOK DARSHAN'
                         },
                         {
                             title: 'E-Donation (Hundi)',
                             desc: 'Secure digital offerings with instant receipts and transparent tracking.',
-                            icon: '🕉️'
+                            icon: '🕉️',
+                            path: '/hundi',
+                            btnText: 'DONATE NOW'
                         },
                         {
                             title: 'Prasadam Tracking',
                             desc: 'Blockchain-enabled supply chain for authentic and holy offering distributions.',
-                            icon: '🍱'
+                            icon: '🍱',
+                            path: '/prasadam',
+                            btnText: 'TRACK PRASADAM'
                         },
                         {
                             title: 'E-Accommodation',
                             desc: 'Near-sanctum stay bookings with integrated pilgrim verification services.',
-                            icon: '🏨'
+                            icon: '🏨',
+                            path: '/accommodation',
+                            btnText: 'BOOK STAY'
                         }
                     ].map((service, idx) => (
                         <motion.div
@@ -146,12 +158,10 @@ const Home = () => {
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
                             whileHover={{ y: -12, rotate: [0, 1, -1, 0] }}
-                            className={`group p-10 bg-white rounded-[2rem] border border-kumkum/5 shadow-[0_15px_40px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(184,134,11,0.1)] transition-all duration-500 text-left relative overflow-hidden ${service.title === 'LIVE CROWD TRACKER' ? 'cursor-pointer' : ''}`}
+                            className="group p-10 bg-white rounded-[2rem] border border-kumkum/5 shadow-[0_15px_40px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(184,134,11,0.1)] transition-all duration-500 text-left relative overflow-hidden cursor-pointer"
                             onClick={() => {
-                                if (service.title === 'LIVE CROWD TRACKER') {
-                                    navigate('/live-tracker');
-                                    window.scrollTo(0, 0);
-                                }
+                                navigate(service.path);
+                                window.scrollTo(0, 0);
                             }}
                         >
                             {/* Visual Accent */}
@@ -169,20 +179,13 @@ const Home = () => {
                                 {service.desc}
                             </div>
 
-                            {service.title === 'LIVE CROWD TRACKER' ? (
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="mt-4 px-8 py-3 bg-kumkum text-white text-[10px] font-black tracking-[0.2em] rounded-full uppercase shadow-xl hover:shadow-kumkum/40 transition-all duration-300"
-                                >
-                                    SEE LIVE TRACKER
-                                </motion.button>
-                            ) : (
-                                <div className="flex items-center gap-2 text-temple-gold font-black text-[9px] tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
-                                    Access Portal
-                                    <span>→</span>
-                                </div>
-                            )}
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="mt-4 px-8 py-3 bg-kumkum text-white text-[10px] font-black tracking-[0.2em] rounded-full uppercase shadow-xl hover:shadow-kumkum/40 transition-all duration-300"
+                            >
+                                {service.btnText}
+                            </motion.button>
                         </motion.div>
                     ))}
                 </div>

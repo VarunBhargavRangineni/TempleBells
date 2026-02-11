@@ -21,7 +21,7 @@ const Navbar = () => {
         { name: 'CROWD MONITOR', href: '/live-tracker' },
         { name: 'SEVAS', href: '/sevas' },
         { name: 'E-DARSHAN', href: '/darshan' },
-        { name: 'E-HUNDI', href: '/hundi' },
+        { name: 'E-DONATION', href: '/hundi' },
         { name: 'PRASADAM', href: '/prasadam' },
         { name: 'ACCOMMODATION', href: '/accommodation' },
     ];
@@ -65,7 +65,7 @@ const Navbar = () => {
                                 className="w-12 h-12 flex items-center justify-center transition-all duration-500 overflow-hidden"
                             >
                                 <img
-                                    src="images/Vslogo.webp"
+                                    src="/images/Vslogo.webp"
                                     alt="Temple Logo"
                                     className="w-full h-full object-contain mix-blend-screen brightness-110 contrast-110"
                                 />

@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import LiveCrowdTracker from './components/LiveCrowdTracker';
 import SevaScheduling from './components/SevaScheduling';
+import SevaBooking from './components/SevaBooking';
 import OnlineDarshanBooking from './components/OnlineDarshanBooking';
 import EDonation from './components/E-Donation';
 import PrasadamTracking from './components/PrasadamTracking';
@@ -33,6 +34,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/live-tracker" element={<LiveCrowdTracker />} />
             <Route path="/sevas" element={<SevaScheduling />} />
+            <Route path="/book-seva/:id" element={<SevaBooking />} />
             <Route path="/darshan" element={<OnlineDarshanBooking />} />
             <Route path="/hundi" element={<EDonation />} />
             <Route path="/prasadam" element={<PrasadamTracking />} />
