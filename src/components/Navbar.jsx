@@ -65,7 +65,7 @@ const Navbar = () => {
                                 className="w-11 h-11 bg-gradient-to-br from-kumkum via-temple-maroon to-black rounded-xl flex items-center justify-center shadow-[0_5px_20px_rgba(155,27,27,0.4)] group-hover:shadow-[0_10px_30px_rgba(155,27,27,0.6)] transition-all duration-500 border border-temple-gold/50 overflow-hidden"
                             >
                                 <img
-                                    src="https://static.vecteezy.com/system/resources/previews/040/520/287/non_2x/hindu-holy-temple-with-mountain-background-vector.jpg"
+                                    src="images/Vslogo.webp"
                                     alt="Temple Logo"
                                     className="w-full h-full object-cover mix-blend-screen brightness-110 contrast-110"
                                 />

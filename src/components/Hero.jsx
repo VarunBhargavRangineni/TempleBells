@@ -11,7 +11,7 @@ const Hero = ({ lang = 'EN' }) => {
                 { tag: 'Om Namo Venkatesaya', title: 'Tirumala Tirupati Devasthanams', subtitle: 'Kali Yuga Vaikuntham - The Abode of Lord Venkateswara' },
                 { tag: 'Om Namah Shivaya', title: 'Srisailam Mallikarjuna Swamy', subtitle: 'The Abode of Lord Shiva & Bhramaramba Devi' },
                 { tag: 'Jai Durga Bhavani', title: 'Kanaka Durga Temple', subtitle: 'The Powerful Deity on Indrakeeladri Hill' },
-                { tag: 'Om Namo Narayanaya', title: 'Simhachalam Templee', subtitle: 'The Abode of Lord Varaha Lakshmi Narasimha' },
+                { tag: 'Om Namo Narayanaya', title: 'Simhachalam Temple', subtitle: 'The Abode of Lord Varaha Lakshmi Narasimha' },
                 { tag: 'Om Namah Shivaya', title: 'Kotappakonda Sri Trikoteswara Swamy Temple', subtitle: 'The Hill of Three Peaks - Trikutachalam' },
                 { tag: 'Nava Narasimha Kshetram', title: 'Ahobilam Temple', subtitle: 'The Nine Abodes of Lord Narasimha' },
                 { tag: 'Mangalagiri Kshetram', title: 'Sri Panakala Lakshmi Narasimha Swamy', subtitle: 'The Lord Who Drinks Panakam' },
@@ -27,18 +27,18 @@ const Hero = ({ lang = 'EN' }) => {
     const t = translations[lang];
 
     const slideImages = [
-        'https://www.fabhotels.com/blog/wp-content/uploads/2019/03/Sri-Venkateswara-Swamy-Temple-Tirumala.jpg',
-        'https://srisailamtourism.com/images/partner-tours/1-day-hyderabad-to-srisailam-sightseeing-tour-package-private-car-header.jpg',
-        'https://live.staticflickr.com/409/18298741278_a0675e8527_b.jpg',
-        'https://media.tripinvites.com/places/visakhapatnam/simhachalam-temple/the-simhachalam-temple-featured.jpg',
-        'https://1.bp.blogspot.com/-woaUFQ48K_s/X9HT2Di-ToI/AAAAAAAADVc/ih29PL2h6OgzUYbydOZpgRZKOOChKJ5YACLcBGAsYHQ/s2048/Kotappakonda%2BTemple%2BTop%2BView.jpg',
-        'https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1539191288_20200102183329_20200416152607.jpg',
-        'https://www.pilgrimaide.com/image/cache/catalog/Blogs/Panakala%20Narasimha%20Swamy%20Temple-2120x800w.jpg',
-        'http://bhadrachalaramadasu.com/wp-content/uploads/2014/10/rrr.jpg',
-        'https://travellerkaka.com/wp-content/uploads/2025/03/Add-a-subheading-22-5-1068x559.png',
-        'https://famoustemplesofindia.com/wp-content/uploads/2023/09/Kanipakam-Varasiddhi-Vinayaka-Swamy-2-1024x578.jpg',
-        'https://www.hyderabadzone.com/wp-content/uploads/2022/11/Yadagirigutta-Yadadri-Temple-4-1200x674.jpg',
-        'https://i.ytimg.com/vi/AYmHRURQZVA/maxresdefault.jpg'
+        'images/TTD.webp',
+        'images/Srisailam.webp',
+        'images/KanakaDurga.webp',
+        'images/Simhachalam.webp',
+        'images/Kotappakonda.webp',
+        'images/Ahobilam.webp',
+        'images/PanakalaNarasimhaSwamy.webp',
+        'images/Bhadrachalam.webp',
+        'images/BasaraGnanaSaraswati.webp',
+        'images/KanipakamVarasiddhiVinayaka.webp',
+        'images/Yadagirigutta.webp',
+        'images/Thiruvannamalai.webp',
     ];
 
     useEffect(() => {
