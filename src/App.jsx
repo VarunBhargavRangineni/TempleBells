@@ -12,6 +12,7 @@ import EDonation from './components/E-Donation';
 import PrasadamTracking from './components/PrasadamTracking';
 import EAccommodation from './components/E-Accommodation';
 import ScrollToTop from './components/ScrollToTop';
+import PilgrimPath from './components/PilgrimPath';
 import { motion } from 'framer-motion';
 
 // Separate Home component to include Hero
@@ -39,6 +40,7 @@ function App() {
             <Route path="/hundi" element={<EDonation />} />
             <Route path="/prasadam" element={<PrasadamTracking />} />
             <Route path="/accommodation" element={<EAccommodation />} />
+            <Route path="/route-planner" element={<PilgrimPath />} />
           </Routes>
         </main>
 

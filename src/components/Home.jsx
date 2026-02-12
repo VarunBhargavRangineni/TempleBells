@@ -116,6 +116,13 @@ const Home = () => {
                             btnText: 'SEE LIVE TRACKER'
                         },
                         {
+                            title: 'Plan Your Darshan Journey',
+                            desc: 'Interactive route planning for pilgrims with temple stops and timings.',
+                            icon: '🗺️',
+                            path: '/route-planner',
+                            btnText: 'ROUTE PLANNER'
+                        },
+                        {
                             title: 'Automated Seva Scheduling',
                             desc: 'Smart queue management and digital slot allocation for all temple rituals.',
                             icon: '🗓️',

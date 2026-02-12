@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Bell, User } from 'lucide-react';
+import { Menu, X, User, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -19,6 +19,7 @@ const Navbar = () => {
     const navLinks = [
         { name: 'HOME', href: '/' },
         { name: 'CROWD MONITOR', href: '/live-tracker' },
+        { name: 'ROUTE PLANNER', href: '/route-planner' },
         { name: 'SEVAS', href: '/sevas' },
         { name: 'E-DARSHAN', href: '/darshan' },
         { name: 'E-DONATION', href: '/hundi' },
@@ -55,9 +56,9 @@ const Navbar = () => {
             </div>
 
             <div className="w-full px-4 md:px-6 lg:px-8 relative z-10">
-                <div className="flex justify-between items-center">
-
-                    <Link to="/" className="flex items-center gap-4 group cursor-pointer ml-4" onClick={() => window.scrollTo(0, 0)}>
+                <div className="flex justify-between items-center h-16">
+                    {/* Left Group: Logo */}
+                    <Link to="/" className="flex items-center gap-4 group cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
                         <div className="relative">
                             <motion.div
                                 whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
@@ -96,25 +97,28 @@ const Navbar = () => {
                         </div>
                     </Link>
 
-                    <div className="hidden md:flex items-center gap-12">
-                        {navLinks.map((link, i) => (
-                            <motion.div
-                                key={link.name}
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3 + (i * 0.1), duration: 0.5 }}
-                                whileHover={{ y: -3, scale: 1.05 }}
-                            >
-                                <Link
-                                    to={link.href}
-                                    className="text-[12px] font-black tracking-[0.25em] transition-all duration-300 relative group py-2 text-temple-ivory/90 hover:text-temple-gold block"
+                    {/* Right Group: Navigation + Account + Mobile Trigger */}
+                    <div className="flex items-center">
+                        <div className="hidden lg:flex items-center gap-6 mr-12">
+                            {navLinks.map((link, i) => (
+                                <motion.div
+                                    key={link.name}
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.3 + (i * 0.1), duration: 0.5 }}
+                                    whileHover={{ y: -3, scale: 1.05 }}
                                 >
-                                    {link.name}
-                                    <span className="absolute -bottom-1 left-1/2 w-0 h-[2px] bg-gradient-to-r from-transparent via-temple-gold to-transparent transition-all duration-500 group-hover:w-full group-hover:left-0 shadow-[0_0_10px_rgba(184,134,11,0.8)]" />
-                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-1 h-1 bg-temple-gold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100" />
-                                </Link>
-                            </motion.div>
-                        ))}
+                                    <Link
+                                        to={link.href}
+                                        className="text-[13px] font-black tracking-[0.05em] transition-all duration-300 relative group py-2 text-temple-ivory/90 hover:text-temple-gold block whitespace-nowrap"
+                                    >
+                                        {link.name}
+                                        <span className="absolute -bottom-1 left-1/2 w-0 h-[2px] bg-gradient-to-r from-transparent via-temple-gold to-transparent transition-all duration-500 group-hover:w-full group-hover:left-0 shadow-[0_0_10px_rgba(184,134,11,0.8)]" />
+                                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-1 h-1 bg-temple-gold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100" />
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </div>
 
                         <motion.div
                             initial={{ opacity: 0, scale: 0 }}
@@ -125,32 +129,31 @@ const Navbar = () => {
                         >
                             <User size={20} className="filter drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]" />
                         </motion.div>
-                    </div>
 
-                    {/* Animated Mobile Trigger */}
-                    <div className="md:hidden flex items-center">
-                        <motion.button
-                            whileTap={{ scale: 0.9, rotate: 90 }}
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="p-2.5 bg-white/5 rounded-xl border border-white/15 text-temple-ivory shadow-lg backdrop-blur-md"
-                        >
-                            <AnimatePresence mode="wait">
-                                {isOpen ? (
-                                    <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                                        <X size={26} />
-                                    </motion.div>
-                                ) : (
-                                    <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                                        <Menu size={26} />
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </motion.button>
+                        <div className="lg:hidden flex items-center ml-4">
+                            <motion.button
+                                whileTap={{ scale: 0.9, rotate: 90 }}
+                                onClick={() => setIsOpen(!isOpen)}
+                                className="p-2.5 bg-white/5 rounded-xl border border-white/15 text-temple-ivory shadow-lg backdrop-blur-md"
+                            >
+                                <AnimatePresence mode="wait">
+                                    {isOpen ? (
+                                        <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                                            <X size={26} />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                                            <Menu size={26} />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* High-Animation Mobile sanctum Panel */}
+            {/* Mobile Menu Panel */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -158,9 +161,8 @@ const Navbar = () => {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -20 }}
                         transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-                        className="md:hidden absolute top-full left-2 right-2 mt-2 bg-black/95 backdrop-blur-3xl border border-temple-gold/20 rounded-[2rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.9)] px-4 py-8 z-[100] overflow-hidden text-temple-ivory"
+                        className="lg:hidden absolute top-full left-2 right-2 mt-2 bg-black/95 backdrop-blur-3xl border border-temple-gold/20 rounded-[2rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.9)] px-4 py-8 z-[100] overflow-hidden text-temple-ivory"
                     >
-                        {/* Mobile Background Aura */}
                         <div className="absolute inset-0 opacity-10 pointer-events-none">
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-kumkum/40 to-transparent" />
                         </div>
@@ -176,7 +178,7 @@ const Navbar = () => {
                                 >
                                     <Link
                                         to={link.href}
-                                        className="text-center py-4 text-[12px] font-black tracking-[0.3em] rounded-[1rem] text-gray-300 border border-white/5 bg-white/5 hover:bg-white/10 hover:text-white transition-all active:bg-kumkum/20 active:border-kumkum/40 block"
+                                        className="text-center py-4 text-[14px] font-black tracking-[0.3em] rounded-[1rem] text-gray-300 border border-white/5 bg-white/5 hover:bg-white/10 hover:text-white transition-all active:bg-kumkum/20 active:border-kumkum/40 block"
                                         onClick={() => setIsOpen(false)}
                                     >
                                         {link.name}
@@ -187,6 +189,8 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {/* Bottom Glow Line */}
             <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
