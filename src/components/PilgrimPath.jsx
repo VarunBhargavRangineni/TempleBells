@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
-import { MapPin, Navigation, Clock, Search, Map as MapIcon, Compass, AlertCircle, MapPinOff, ChevronDown, Sparkles, ArrowLeft, ChevronRight, Car } from 'lucide-react';
+import { MapPin, Navigation, Clock, Search, Map as MapIcon, Compass, AlertCircle, MapPinOff, ChevronDown, Sparkles, ArrowLeft, ChevronRight, Car, Info, Utensils, Home } from 'lucide-react';
+import TempleDetails from './TempleDetails';
 
 // Temple Database
 const TEMPLES = [
@@ -286,6 +287,13 @@ const PilgrimPath = () => {
     const [isSearching, setIsSearching] = useState(false);
     const [currentTime, setCurrentTime] = useState('06:00 AM');
 
+    const scrollToDetails = (templeId) => {
+        const element = document.getElementById(`temple-detail-${templeId}`);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    };
+
 
     const roadRef = React.useRef(null);
     const { scrollYProgress } = useScroll({
@@ -493,6 +501,19 @@ const PilgrimPath = () => {
                 return distA - distB;
             });
 
+            // CUSTOM RULE: Padmavathi Ammavari should always differ to Tirumala (Visit Goddess first tradition)
+            // We force this order in the candidates list before calculating the path
+            const pIndex = candidates.findIndex(t => t.name === "Padmavathi Ammavari");
+            const tIndex = candidates.findIndex(t => t.name === "Tirumala Sri Venkateswara Swamy");
+
+            if (pIndex !== -1 && tIndex !== -1 && pIndex > tIndex) {
+                // Move Padmavathi to be before Tirumala
+                const padmavathi = candidates[pIndex];
+                candidates.splice(pIndex, 1); // remove from old spot
+                const newTIndex = candidates.findIndex(t => t.name === "Tirumala Sri Venkateswara Swamy"); // find new index of Tirumala
+                candidates.splice(newTIndex, 0, padmavathi); // insert before
+            }
+
             // Second pass: Iterative filtering to ensure realistic sequence without huge zig-zags
             // A temple is only added if it's "on the way" from the current position to the destination
             const onRoute = [];
@@ -610,7 +631,7 @@ const PilgrimPath = () => {
                                 <DivineDropdown
                                     value={toNode}
                                     onChange={setToNode}
-                                    options={TEMPLES.map(t => t.name)}
+                                    options={TEMPLES.map(t => t.name).sort()}
                                     icon={Navigation}
                                 />
                             </div>
@@ -638,6 +659,46 @@ const PilgrimPath = () => {
                         </div>
                     </div>
                 </motion.div>
+
+                {/* Initial State / Welcome Section */}
+                <AnimatePresence>
+                    {!results && !isSearching && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            className="mt-8 flex flex-col items-center"
+                        >
+                            {/* Large Call to Action / Placeholder Visual */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.3 }}
+                                className="w-full p-12 bg-gradient-to-br from-kumkum/5 via-white to-temple-gold/5 rounded-[3rem] border border-kumkum/10 flex flex-col items-center text-center relative overflow-hidden"
+                            >
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-kumkum/5 rounded-full blur-[100px] -mr-32 -mt-32" />
+                                <div className="absolute bottom-0 left-0 w-64 h-64 bg-temple-gold/10 rounded-full blur-[100px] -ml-32 -mb-32" />
+
+                                <motion.div
+                                    animate={{ y: [0, -10, 0] }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                    className="relative z-10 mb-6"
+                                >
+                                    <div className="w-20 h-20 bg-white rounded-full shadow-2xl flex items-center justify-center p-5 border border-kumkum/5">
+                                        <Navigation className="text-kumkum animate-pulse" size={40} />
+                                    </div>
+                                </motion.div>
+
+                                <h2 className="text-2xl md:text-3xl font-black text-temple-dark uppercase tracking-tighter mb-4 relative z-10">
+                                    Your Divine <span className="text-kumkum">Journey</span> Awaits
+                                </h2>
+                                <p className="text-slate-500 font-bold uppercase tracking-[0.2em] text-[10px] max-w-md relative z-10">
+                                    Select your starting city and destination above to calculate distances, travel times, and temple availability.
+                                </p>
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 {/* Results Section */}
                 <AnimatePresence mode="wait">
@@ -784,28 +845,42 @@ const PilgrimPath = () => {
                                                     </div>
 
                                                     <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} mt-4`}>
-                                                        <div className="flex items-center gap-2 mb-2">
+                                                        <div className="flex items-center gap-2 mb-1">
                                                             <span className="text-[9.5px] font-black text-kumkum/50 tracking-widest uppercase">{temple.location}</span>
                                                             <div className="w-1 h-1 bg-kumkum/10 rounded-full" />
                                                             <span className="text-[9.5px] font-black text-kumkum/50 tracking-widest uppercase">{temple.state}</span>
                                                         </div>
-                                                        <h3 className="text-base md:text-lg font-black text-temple-dark leading-tight mb-1.5 group-hover:text-kumkum transition-colors">{temple.name}</h3>
-                                                        <p className="text-xs md:text-[13px] text-temple-dark/60 font-medium mb-4 leading-relaxed line-clamp-2">{temple.description}</p>
+                                                        <h3 className="text-base md:text-lg font-black text-temple-dark leading-tight mb-1 group-hover:text-kumkum transition-colors">{temple.name}</h3>
+                                                        <p className="text-xs md:text-[13px] text-temple-dark/60 font-medium mb-2 leading-relaxed line-clamp-2">{temple.description}</p>
 
-                                                        <div className={`flex flex-wrap gap-3 ${idx % 2 === 0 ? 'md:justify-end' : 'md:justify-start'} w-full`}>
-                                                            <div className="flex items-center gap-2.5 bg-temple-paper/40 px-4 py-2.5 rounded-2xl border border-kumkum/5 flex-grow md:flex-grow-0">
-                                                                <Clock size={16} className="text-kumkum" />
+                                                        <div className={`flex flex-wrap gap-2 ${idx % 2 === 0 ? 'md:justify-end' : 'md:justify-start'} w-full`}>
+                                                            <div className="flex items-center gap-2 bg-temple-paper/40 px-3 py-2 rounded-xl border border-kumkum/5 flex-grow md:flex-grow-0">
+                                                                <Clock size={14} className="text-kumkum" />
                                                                 <div className="text-left">
-                                                                    <p className="text-[8.5px] font-black text-gray-400 uppercase tracking-tighter mb-0.5">Arrival</p>
-                                                                    <p className="text-[13px] font-black text-temple-dark leading-none">{temple.arrivalTime}</p>
+                                                                    <p className="text-[8px] font-black text-gray-400 uppercase tracking-tighter mb-0.5">Arrival</p>
+                                                                    <p className="text-xs font-black text-temple-dark leading-none">{temple.arrivalTime}</p>
                                                                 </div>
                                                             </div>
-                                                            <div className="flex items-center gap-2.5 bg-temple-paper/40 px-4 py-2.5 rounded-2xl border border-kumkum/5 flex-grow md:flex-grow-0">
-                                                                <Sparkles size={16} className="text-temple-gold" />
+                                                            <div className="flex items-center gap-2 bg-temple-paper/40 px-3 py-2 rounded-xl border border-kumkum/5 flex-grow md:flex-grow-0">
+                                                                <Sparkles size={14} className="text-temple-gold" />
                                                                 <div className="text-left">
-                                                                    <p className="text-[8.5px] font-black text-gray-400 uppercase tracking-tighter mb-0.5">Temple Timings</p>
-                                                                    <p className="text-[13px] font-black text-temple-dark leading-none">{to12h(temple.opening)} - {to12h(temple.closing)}</p>
+                                                                    <p className="text-[8px] font-black text-gray-400 uppercase tracking-tighter mb-0.5">Timings</p>
+                                                                    <p className="text-xs font-black text-temple-dark leading-none">{to12h(temple.opening)} - {to12h(temple.closing)}</p>
                                                                 </div>
+                                                            </div>
+
+                                                            {/* View Details Button */}
+                                                            <div className={`mt-2 pt-2 border-t border-kumkum/10 flex w-full ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                                                                <button
+                                                                    onClick={() => scrollToDetails(temple.id)}
+                                                                    className="group/btn relative px-4 py-2 bg-kumkum/5 text-kumkum font-black text-[9px] tracking-[0.2em] uppercase rounded-lg border border-kumkum/10 hover:bg-kumkum hover:text-white transition-all duration-300 overflow-hidden flex items-center gap-2"
+                                                                >
+                                                                    <span className="relative z-10 flex items-center gap-1.5">
+                                                                        <Info size={12} />
+                                                                        View Details
+                                                                    </span>
+                                                                    <div className="absolute inset-0 bg-gradient-to-r from-kumkum to-temple-maroon translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-out" />
+                                                                </button>
                                                             </div>
                                                         </div>
 
@@ -849,6 +924,11 @@ const PilgrimPath = () => {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            {/* Temple Detailed Information Section */}
+                            <div className="mt-16 bg-[#FDFBF7] rounded-[3rem] border border-kumkum/5 shadow-inner">
+                                <TempleDetails temples={results.temples} />
                             </div>
                         </motion.div>
                     )}
