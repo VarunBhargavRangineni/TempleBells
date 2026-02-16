@@ -19,7 +19,9 @@ const Hero = ({ lang = 'EN' }) => {
                 { tag: 'Vidya Kshetram', title: 'Basara Gnana Saraswati Temple', subtitle: 'The Ancient Abode of Goddess Saraswati' },
                 { tag: 'Om Gam Ganapataye Namaha', title: 'Swayambhu Sri Varasiddhi Vinayaka Swamy', subtitle: 'Kanipakam Devasthanam - The Lord of Beginnings' },
                 { tag: ' Om Namo Narasimhaya', title: 'Sri Lakshmi Narasimha Swamy Temple', subtitle: 'Yadagirigutta - Telangana Tirupati' },
-                { tag: 'Om Arunachaleswaraya Namaha', title: 'Arunachaleswarar Temple - Thiruvannamalai', subtitle: 'The Agni Lingam - Eternal Fire of Wisdom' }
+                { tag: 'Om Sri Satyanarayanaya Namaha', title: 'Sri Veera Venkata Satyanarayana Swamy', subtitle: 'Annavaram - The Abode of Truth' },
+                { tag: 'Om Arunachaleswaraya Namaha', title: 'Arunachaleswarar Temple - Thiruvannamalai', subtitle: 'The Agni Lingam - Eternal Fire of Wisdom' },
+                { tag: 'Swamiye Saranam Ayyappa', title: 'Sabarimala Sree Dharma Sastha Temple', subtitle: 'The Abode of Lord Ayyappa' }
             ],
         }
     };
@@ -38,7 +40,9 @@ const Hero = ({ lang = 'EN' }) => {
         'images/BasaraGnanaSaraswati.webp',
         'images/KanipakamVarasiddhiVinayaka.webp',
         'images/Yadagirigutta.webp',
+        'images/Annavaram.webp',
         'images/Thiruvannamalai.webp',
+        'images/Sabarimala.webp'
     ];
 
     useEffect(() => {
