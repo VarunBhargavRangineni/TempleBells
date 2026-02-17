@@ -167,7 +167,6 @@ const SuccessModal = ({ isOpen, onClose }) => {
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          {/* Backdrop with sophisticated blur */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -183,7 +182,6 @@ const SuccessModal = ({ isOpen, onClose }) => {
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
             className="relative bg-white w-full max-w-lg rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] overflow-hidden p-10 text-center border border-white/20"
           >
-            {/* Divine Particles / Petals Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               {[...Array(12)].map((_, i) => (
                 <motion.div
@@ -224,7 +222,6 @@ const SuccessModal = ({ isOpen, onClose }) => {
                   </motion.div>
                 </div>
 
-                {/* Divine Rays */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -301,7 +298,7 @@ const EDonation = () => {
         donations: prev.donations + Math.floor(Math.random() * 80 + 20), // Increment by ₹20-100
         meals: prev.meals + (Math.random() > 0.6 ? 1 : 0) // Increment meal occasionally
       }));
-    }, 2000); // Update every 2 seconds for a balanced feel
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -320,10 +317,8 @@ const EDonation = () => {
       alert("Please fill in all mandatory fields");
       return;
     }
-    // Simulate API call
     setTimeout(() => {
       setShowSuccess(true);
-      // Reset form usually happens here or after modal close
     }, 1000);
   };
 
@@ -470,7 +465,7 @@ const EDonation = () => {
                       type="tel"
                       value={formData.mobile}
                       onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 98765 XXXXX"
                       className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-temple-gold outline-none transition-all font-medium text-temple-dark"
                       required
                     />
