@@ -104,12 +104,12 @@ const DONATION_CATEGORIES = [
 const PRESET_AMOUNTS = [100, 500, 1000];
 
 const RECENT_DONORS = [
-  { name: "Srinivas Rao", amount: 1116, purpose: "Annadanam" },
+  { name: "Srinivas Rao", amount: 5001, purpose: "Annadanam" },
   { name: "Lakshmi Devi", amount: 501, purpose: "Hundi" },
-  { name: "Rajesh Kumar", amount: 5001, purpose: "Goshala" },
+  { name: "Uma Maheswara Rao D.", amount: 5116, purpose: "Goshala" },
+  { name: "Narendra Babu R.", amount: 1011, purpose: "Renovation" },
   { name: "Ananya Reddy", amount: 200, purpose: "Medical" },
   { name: "Venkatesh P.", amount: 1001, purpose: "Nitya Seva" },
-  { name: "Sarah J.", amount: 5000, purpose: "Renovation" },
   { name: "Krishna Murthy", amount: 116, purpose: "Hundi" },
 ];
 
