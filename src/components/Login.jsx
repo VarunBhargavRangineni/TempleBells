@@ -54,8 +54,8 @@ const Login = ({ setAuth }) => {
                         >
                             <ShieldCheck className="text-white w-10 h-10" />
                         </motion.div>
-                        <h1 className="text-3xl font-bold text-slate-800 tracking-tight">Divine Portal</h1>
-                        <p className="text-slate-500 mt-2 font-medium">Verify your sacred identity to proceed</p>
+                        <h1 className="text-3xl font-bold text-slate-800 tracking-tight">TEMPLE BELLS</h1>
+                        <p className="text-slate-500 mt-2 font-medium">Please sign in to access the platform</p>
                     </div>
 
                     <form onSubmit={handleLogin} className="space-y-6">
