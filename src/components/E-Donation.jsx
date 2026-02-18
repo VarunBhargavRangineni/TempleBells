@@ -567,13 +567,10 @@ const EDonation = () => {
                   }}
                   className="p-4 space-y-4 hover:pause"
                   onMouseEnter={(e) => {
-                    // Note: hover pause is usually handled by CSS, hard to do with Framer Motion simple animation
-                    // Simplest is keyframe animation in CSS or complex state. 
-                    // For simplicity, we stick to continuous scroll or use CSS.
                   }}
                   style={{ cursor: 'default' }}
                 >
-                  {/* Duplicated list for seamless loop */}
+
                   {[...RECENT_DONORS, ...RECENT_DONORS, ...RECENT_DONORS].map((donor, i) => (
                     <div key={i} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between group hover:border-temple-gold transition-colors">
                       <div>

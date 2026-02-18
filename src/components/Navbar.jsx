@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, User, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ setAuth }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -120,15 +121,59 @@ const Navbar = () => {
                             ))}
                         </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.6, type: 'spring', stiffness: 200 }}
-                            whileHover={{ scale: 1.1, rotate: 360 }}
-                            className="p-2.5 bg-gradient-to-br from-white/10 to-transparent rounded-xl border border-white/20 cursor-pointer text-temple-ivory hover:text-temple-gold hover:border-temple-gold/50 transition-all shadow-[inset_0_0_15px_rgba(255,255,255,0.05)]"
-                        >
-                            <User size={20} className="filter drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]" />
-                        </motion.div>
+                        <div className="relative">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.6, type: 'spring', stiffness: 200 }}
+                                whileHover={{ scale: 1.05 }}
+                                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                                className={`p-2.5 rounded-xl border transition-all cursor-pointer flex items-center gap-2 ${isUserMenuOpen
+                                        ? 'bg-temple-gold text-kumkum border-temple-gold'
+                                        : 'bg-white/10 text-temple-ivory border-white/20 hover:border-temple-gold/50'
+                                    }`}
+                            >
+                                <User size={20} className={isUserMenuOpen ? '' : 'filter drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]'} />
+                            </motion.div>
+
+                            <AnimatePresence>
+                                {isUserMenuOpen && (
+                                    <>
+                                        {/* Backdrop to close menu */}
+                                        <div
+                                            className="fixed inset-0 z-[-1]"
+                                            onClick={() => setIsUserMenuOpen(false)}
+                                        />
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                            className="absolute right-0 mt-3 w-48 bg-white rounded-2xl shadow-2xl border border-amber-100 overflow-hidden z-50"
+                                        >
+                                            <div className="p-4 border-b border-slate-100 bg-slate-50/50">
+                                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Devotee Session</p>
+                                                <p className="text-xs font-bold text-slate-700 truncate">visdomwaves@gmail.com</p>
+                                            </div>
+                                            <div className="p-2">
+                                                <button
+                                                    onClick={() => {
+                                                        localStorage.removeItem('isAuthenticated');
+                                                        setAuth(false);
+                                                        setIsUserMenuOpen(false);
+                                                    }}
+                                                    className="w-full flex items-center gap-3 px-3 py-3 rounded-xl text-red-600 hover:bg-red-50 transition-colors text-xs font-black uppercase tracking-wider"
+                                                >
+                                                    <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center">
+                                                        <X size={16} />
+                                                    </div>
+                                                    Logout Sanctuary
+                                                </button>
+                                            </div>
+                                        </motion.div>
+                                    </>
+                                )}
+                            </AnimatePresence>
+                        </div>
 
                         <div className="lg:hidden flex items-center ml-4">
                             <motion.button
