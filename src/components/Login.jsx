@@ -18,7 +18,7 @@ const Login = ({ setAuth }) => {
 
         // Simulated check for the specific credentials provided by the user
         setTimeout(() => {
-            if (email === 'visdomwaves@gmail.com' && password === '1947') {
+            if (email === 'visdomwaves@gmail.com' && password === 'india@1947') {
                 localStorage.setItem('isAuthenticated', 'true');
                 setAuth(true);
                 navigate('/');
